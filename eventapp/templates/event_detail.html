@@ -1,0 +1,19 @@
+
+
+
+<h2>{{ event.title }}</h2>
+<p>{{ event.description }}</p>
+<p>Date: {{ event.date }}</p>
+<p>Location: {{ event.location }}</p>
+
+
+
+<button onclick="document.location='/register' "type= "submit" >Register</button>
+
+
+
+{% comment %} <form method="POST" action="{% url 'event_detail' event.id %}">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Register</button>
+</form> {% endcomment %}

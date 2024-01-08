@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333333;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666666;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+        
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: transparent;
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+    z-index: 999;
+}
+
+header.sticky{
+    border-bottom: 0.1rem solid var(--grey);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+header .logo h2{
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+header .navbar a{
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-left: 1rem;
+}
+
+header .navbar a:hover,
+header .navbar a.active{
+    color: var(--purple);
+}
+
+header #menu-btn{
+    font-size: 3rem;
+    color: var(--white);
+    cursor: pointer;
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+    display: none;
+}
+
+header .fa-times{
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+header #menu-btn:hover{
+    color: var(--purple);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --purple: #8cf2ae;
+  
+    --white: #F7F5F2;
+    --grey: #DFDFDE;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    -webkit-transition: all 0.2s linear;
+       -moz-transition: all 0.2s linear;
+         -o-transition: all 0.2s linear;
+  	        transition: all 0.2s linear;
+}
+
+*::selection{
+    color: var(--white);
+    background-color: var(--purple);
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body{
+    background-color: white;
+}
+
+section{
+    padding: 2rem 5%;
+}
+
+::-webkit-scrollbar{
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 1rem;
+    background-color: var(--purple);
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--black);
+}
+
+.swiper-pagination-bullet{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50rem;
+    background-color: var(--grey);
+}
+
+.swiper-pagination-bullet-active{
+    width: 3rem;
+    background: var(--purple);
+}
+
+.heading{
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        {% for events in events %}
+        </h1 style = 'color: blue'>{{ events.title }}</h1>
+        <p>{{ events.description }}</p>
+        <p>Date: {{ events.date }}</p>
+        <p>Location: {{ events.location }}</p>
+        
+    {% endfor %}
+
+
+    {{form}}
+    
+    </div>
+</body>
+</html>
